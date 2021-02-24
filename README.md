@@ -286,7 +286,7 @@ Konfiguration unter /etc/dnscrypt-proxy/dnscrypt-proxy.toml
     ipv6_servers = false
     dnscrypt_servers = true
     doh_servers = true
-    require_dnssec = false #auf true setzen aber false erstmal zum testen
+    require_dnssec = true
     require_nolog = true
     require_nofilter = false
     fallback_resolvers = ['9.9.9.9:53', '8.8.8.8:53']
