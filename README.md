@@ -59,7 +59,7 @@ Wechseln:
 
     cd /etc/wireguard
 
-    Konfig anlegen:
+Konfig anlegen:
 
     sh -c 'umask 077; touch /etc/wireguard/wg0.conf'
 
