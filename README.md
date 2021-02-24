@@ -70,6 +70,8 @@ Public & Private Key generieren:
 Private & Public keys notieren:
 
     cat publickey && cat privatekey
+    
+    
 
 Interface editieren unter  /etc/wireguard/wg0.conf
 Interface wg0 Konfiguration:
@@ -99,6 +101,7 @@ VPN server port ##
 --- /etc/wireguard/wg0.conf Server
 
 
+
 Wireguard Firewall Regeln generieren:
 
     vi /etc/firewalld/services/wireguard.xml
@@ -116,6 +119,8 @@ Firewalld-Konfig unter (RHEL /usr/lib/firewalld/services/ ) ( Centos : /etc/fire
 
 --- /etc/firewalld/services/wireguard.xml
 
+
+
  Firewall regeln aktivieren:
 
     firewall-cmd --permanent --add-service=wireguard --zone=public
@@ -127,6 +132,7 @@ Masqueading auf Public aktivieren:
 Firewall neustarten & prüfen:
 
     firewall-cmd --reload && sudo firewall-cmd --list-all
+    
 
 Centos benötigt zusätzliche Forwarding Parameter die unter /etc/sysctl.d/99-custom.conf gesetzt werden:
 
@@ -151,12 +157,14 @@ Fuer Ipv6, besser mal anlassen da DNSCrypt per Default auf Ipv6 zu arbeiten schi
 
     net.ipv6.conf.all.forwarding = 1
     
-Falls Ihr IPV6 abschalten wollt, ansonsten ist die Konfiguration an dieser Stelle fertig:
+Falls du IPV6 abschalten willst, ansonsten ist die Konfiguration an dieser Stelle fertig:
 
     #net.ipv6.conf.all.disable_ipv6 = 1
     #net.ipv6.conf.default.disable_ipv6 = 1
 
 --- /etc/sysctl.d/99-custom.conf 
+
+
     
 Zum direkten aktivieren ohne Neustart:
 
@@ -173,6 +181,7 @@ Services starten (Pro Änderung,z.B. neuer Client, immer WG-Service stoppen, Cli
     systemctl enable wg-quick@wg0.service && sudo systemctl start wg-quick@wg0 && sudo systemctl status wg-quick@wg0
 
 Check (optional)
+
     sudo wg
 
  
@@ -190,9 +199,9 @@ Verzeichnis anlegen und Konfigdatei erstellen
     mkdir -v /etc/wireguard/
     sh -c 'umask 077; touch /etc/wireguard/wg0.conf'
 
-Keys generieren
+Keys generieren:
 
-   sh -c 'umask 077; wg genkey | tee privatekey | wg pubkey > publickey'
+    sh -c 'umask 077; wg genkey | tee privatekey | wg pubkey > publickey'
 
 Public & Privatekey auslesen
 
@@ -320,7 +329,7 @@ Test:
     cat /etc/resolf.conf;dig google.de
 
  
-# Firewall & Routes für Wireguard mit DNSCrypt
+# IPTables / Firewalld für Wireguard mit DNSCrypt
 
 Folgende Regeln sollten bereits in der /etc/wireguard/wg0.conf gesetzt worden sein:
 
