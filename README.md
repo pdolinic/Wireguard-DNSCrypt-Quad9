@@ -25,7 +25,9 @@ Then add the following line to the [Peers] section of the WireGuard configuratio
 --Hinweis1 Quote  bzgl Pre-Shared-Key--
 
 --Hinweis2: 
+
 X.X.X.X ersetzen durch gewünschtes lokales IP-Netz des Wireguard adapter, z.B. 192.168.0.X etc. https://en.wikipedia.org/wiki/Private_network
+
 --Hinweis2: 
 
 
