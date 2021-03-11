@@ -387,8 +387,6 @@ https://linuxtips.us/install-wireguard-centos-8/ #Guide2
 
 https://gist.github.com/Anachron/e2ba7ace4e4ef6988182adc7462ffb80 #Tutorial Ubuntu
 
-https://github.com/IAmStoxe/wirehole #Docker Komplettlösung unter Ubuntu
-
 https://tau.gr/posts/2019-03-03-set-up-cloudflared-ubuntu-wireguard/ #Wireguard mit Cloudflared-Resolver
 
 https://www.linuxbabe.com/centos/wireguard-vpn-server-centos # Guide 2# Centos & Wireguard
@@ -396,8 +394,6 @@ https://www.linuxbabe.com/centos/wireguard-vpn-server-centos # Guide 2# Centos &
 https://www.educba.com/dns-configuration-in-linux/
 
 https://linuxize.com/post/install-configure-fail2ban-on-centos-8/
-
-https://gitlab.com/cyber5k/mistborn # All-in-One-Alternative, Interessantes Komplettpacket
 
 https://stanislas.blog/2019/01/how-to-setup-vpn-server-wireguard-nat-ipv6/
 
@@ -415,4 +411,10 @@ https://wiki.archlinux.org/index.php/Dnscrypt-proxy
 
 https://www.rahulpandit.com/post/wireguard-vpn-search-privately-searx-block-ads-and-tracking-pihole-dnscrypt-proxy/#add-the-missing-route #Hinweis Routing
 
-https://freedombox.org/ # All-in-One-Alternative mit OpenVPN, Matetrix, Search uvm.
+https://freedombox.org/ # All-in-One-Alternative mit OpenVPN, Matrix, Search uvm.
+
+https://gitlab.com/cyber5k/mistborn # All-in-One-Alternative, Interessantes Komplettpacket
+
+https://github.com/IAmStoxe/wirehole #Docker Komplettlösung unter Ubuntu
+
+
