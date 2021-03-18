@@ -6,7 +6,7 @@ Vorteile: https://www.ivpn.net/pptp-vs-ipsec-ikev2-vs-openvpn-vs-wireguard/
 
 # Hinweise
 
---Hinweis1 Quote bzgl Pre-Shared-Key---
+--+Hinweis1 Quote bzgl Pre-Shared-Key---
 
 
 Pre-Shared Key as additional security #extra security
@@ -22,14 +22,14 @@ Then add the following line to the [Peers] section of the WireGuard configuratio
     Presharedkey = <Pre-Shared Key>
     
     
---Hinweis1 Quote  bzgl Pre-Shared-Key---
+--#Hinweis1 Quote  bzgl Pre-Shared-Key---
 
 
---Hinweis2---
+--+Hinweis2---
 
 X.X.X.X ersetzen durch gewünschtes lokales IP-Netz des Wireguard adapter, z.B. 192.168.0.X etc. https://en.wikipedia.org/wiki/Private_network
 
---Hinweis2---
+--#Hinweis2---
 
 
 # Installations & Konfigurations Start, bitte direkt unter Root arbeiten via
@@ -76,7 +76,7 @@ Private & Public keys notieren:
 Interface editieren unter  /etc/wireguard/wg0.conf
 Interface wg0 Konfiguration:
 
---- /etc/wireguard/wg0.conf Server
+---+ /etc/wireguard/wg0.conf Server
 
     [Interface]
 
@@ -98,7 +98,7 @@ VPN server port ##
     
     PostDown = iptables -D FORWARD -i wg0 -j ACCEPT; iptables -t nat -D POSTROUTING -o eth0 -j MASQUERADE; ip6tables -D FORWARD -i wg0 -j ACCEPT; ip6tables -t nat -D POSTROUTING -o eth0 -j MASQUERADE
 
---- /etc/wireguard/wg0.conf Server
+---# /etc/wireguard/wg0.conf Server
 
 
 
@@ -108,7 +108,7 @@ Wireguard Firewall Regeln generieren:
 
 Firewalld-Konfig unter (RHEL /usr/lib/firewalld/services/ ) ( Centos : /etc/firewalld/services/wireguard.xml )
 
---- /etc/firewalld/services/wireguard.xml
+---+ /etc/firewalld/services/wireguard.xml
 
     <?xml version="1.0" encoding="utf-8"?>
     <service>
@@ -117,7 +117,7 @@ Firewalld-Konfig unter (RHEL /usr/lib/firewalld/services/ ) ( Centos : /etc/fire
     <port protocol="udp" port="30000"/>
     </service>
 
---- /etc/firewalld/services/wireguard.xml
+---# /etc/firewalld/services/wireguard.xml
 
 
 
@@ -136,7 +136,7 @@ Firewall neustarten & prüfen:
 
 Centos benötigt zusätzliche Forwarding Parameter die unter /etc/sysctl.d/99-custom.conf gesetzt werden:
 
---- /etc/sysctl.d/99-custom.conf 
+---+ /etc/sysctl.d/99-custom.conf 
 
 Turn on bbr ##
 
@@ -162,7 +162,7 @@ Falls du IPV6 abschalten willst, ansonsten ist die Konfiguration an dieser Stell
     #net.ipv6.conf.all.disable_ipv6 = 1
     #net.ipv6.conf.default.disable_ipv6 = 1
 
---- /etc/sysctl.d/99-custom.conf 
+---# /etc/sysctl.d/99-custom.conf 
 
 
     
@@ -209,7 +209,7 @@ Public & Privatekey auslesen
 
 Die wg0 .conf sollte folgendes beinhalten:
     
---- wg0.conf - Client 
+---+ wg0.conf - Client 
 
     [Interface]
 
@@ -241,7 +241,7 @@ Key connection alive ##
 
     PersistentKeepalive = 15
 
---- wg0.conf - Client 
+---# wg0.conf - Client 
 
 
 Services starten & testen, danach stoppen da noch keine Verbindung verfügbar ist:
@@ -258,7 +258,7 @@ Services starten & testen, danach stoppen da noch keine Verbindung verfügbar is
 
 Nachtragen des Public-Key des Clients & der Client-IP-Zuweisung unter wg0.conf:
 
---- wg0.conf - Server
+---+ wg0.conf - Server
 
     [Peer]
     
@@ -270,7 +270,7 @@ client VPN IP address (note /32 subnet) ##
 
     AllowedIPs = X.X.X.2/32 #Achtung /32-beachten muss hier gesetzt werden
 
---- wg0.conf - Server
+---# wg0.conf - Server
 
 
 Neustarten
@@ -287,7 +287,7 @@ Installieren
 
 Konfiguration unter /etc/dnscrypt-proxy/dnscrypt-proxy.toml
 
----/etc/dnscrypt-proxy/dnscrypt-proxy.toml
+---+ /etc/dnscrypt-proxy/dnscrypt-proxy.toml
     
     server_names = ['quad9-dnscrypt-ip4-filter-pri'] #nach belieben anpassen https://dnscrypt.info/public-servers/
     listen_addresses = ['0.0.0.0:53'] #AlleInterfaces incl Wireguard
@@ -307,7 +307,7 @@ Konfiguration unter /etc/dnscrypt-proxy/dnscrypt-proxy.toml
     cache_file = 'quad9-resolvers.md'
     prefix = 'quad9-'
 
----/etc/dnscrypt-proxy/dnscrypt-proxy.toml
+---# /etc/dnscrypt-proxy/dnscrypt-proxy.toml
 
  Anschalten:
 
@@ -337,7 +337,7 @@ Folgende Regeln sollten bereits in der /etc/wireguard/wg0.conf gesetzt worden se
 
     PostDown = iptables -D FORWARD -i wg0 -j ACCEPT; iptables -t nat -D POSTROUTING -o eth0 -j MASQUERADE; ip6tables -D FORWARD -i wg0 -j ACCEPT; ip6tables -t nat -D POSTROUTING -o eth0 -j MASQUERADE
 
----neue IPTables Regeln (funktioniert unter Centos da iptables-translate aktiv ist)
+---+ neue IPTables Regeln (funktioniert unter Centos da iptables-translate aktiv ist)
       
      iptables -A INPUT -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
      iptables -A INPUT -s X.X.X.X/24 -p udp -m udp --dport 53 -m conntrack --ctstate NEW -j ACCEPT
@@ -351,7 +351,7 @@ Folgende Regeln sollten bereits in der /etc/wireguard/wg0.conf gesetzt worden se
      iptables -P FORWARD DROP
      iptables -P OUTPUT ACCEPT
 
----neue IPTables Regeln (funktioniert unter Centos da iptables-translate aktiv ist)
+---# neue IPTables Regeln (funktioniert unter Centos da iptables-translate aktiv ist)
 
 Abspeichern (unter Centos: /etc/syconfig/iptables):
 
@@ -371,7 +371,7 @@ Firewalld neustarten:
 
 Finaler Netzwerk Neustart:
     
-    Service Networkmanager restart
+    service Networkmanager restart
 
 
 Quellen:
