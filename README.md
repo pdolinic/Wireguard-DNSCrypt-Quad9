@@ -223,7 +223,7 @@ client ip address ##
   
     [Peer]
 
-    CentOS 8 server public key ##
+CentOS 8 server public key ##
 
     PublicKey = ServerPublicKey
   
