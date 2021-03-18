@@ -3,10 +3,11 @@ Installation &amp; Konfiguration von Wireguard mit Dnscrypt &amp; Quad 9
 
 Vorteile: https://www.ivpn.net/pptp-vs-ipsec-ikev2-vs-openvpn-vs-wireguard/
 
+# Blogpost https://www.netways.de/blog/2021/03/18/lust-auf-mehr-privacy-diy-wireguard-mit-dnscrypt-quad9
 
 # Hinweise
 
---+Hinweis1 Quote bzgl Pre-Shared-Key---
+--+ Hinweis1 Quote bzgl Pre-Shared-Key---
 
 
 Pre-Shared Key as additional security #extra security
@@ -22,14 +23,14 @@ Then add the following line to the [Peers] section of the WireGuard configuratio
     Presharedkey = <Pre-Shared Key>
     
     
---#Hinweis1 Quote  bzgl Pre-Shared-Key---
+--# Hinweis1 Quote  bzgl Pre-Shared-Key---
 
 
---+Hinweis2---
+--+ Hinweis2---
 
 X.X.X.X ersetzen durch gewünschtes lokales IP-Netz des Wireguard adapter, z.B. 192.168.0.X etc. https://en.wikipedia.org/wiki/Private_network
 
---#Hinweis2---
+--# Hinweis2---
 
 
 # Installations & Konfigurations Start, bitte direkt unter Root arbeiten via
