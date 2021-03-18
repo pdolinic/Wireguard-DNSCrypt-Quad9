@@ -1,4 +1,4 @@
-# Wireguard-Dnscrypt-Quad9 Install-Guide
+# Wireguard Dnscrypt Quad9 Install Guide
 Installation &amp; Konfiguration von Wireguard mit Dnscrypt &amp; Quad 9
 
 Vorteile: https://www.ivpn.net/pptp-vs-ipsec-ikev2-vs-openvpn-vs-wireguard/
