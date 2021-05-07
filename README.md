@@ -224,6 +224,10 @@ client ip address ##
     Address = X.X.X.2/24 #eigene ip dieses rechners im server-subnet
   
     [Peer]
+    
+Wireguard Server DNS
+
+    DNS = serverip.serverip.serverip.serverip
 
 CentOS 8 server public key ##
 
