@@ -52,6 +52,14 @@ Einbinden des benötigten Repos:
 Kernel-Modle installieren falls nicht geschehen:
 
     dnf install kmod-wireguard wireguard-tools
+    
+    
+Wird der bei einem Centos / Rhel Kernel Update, das externe Kernel-DKMS Packet nicht schnell genug signiert, wird das WG0 Interface nicht starten - eine Lösung ist es hier ein alternatives DKMS eines alternativen Repos einzubinden:
+
+    dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+    subscription-manager repos --enable codeready-builder-for-rhel-8-$(arch)-rpms
+    dnf copr enable jdoss/wireguard
+    dnf install wireguard-dkms wireguard-tools
 
 Verzeichnis anlegen:
 
