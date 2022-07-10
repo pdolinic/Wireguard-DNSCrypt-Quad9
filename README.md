@@ -2,6 +2,7 @@
 Installation &amp; Konfiguration von Wireguard mit Dnscrypt &amp; Quad 9
 
 Vorteile: https://www.ivpn.net/pptp-vs-ipsec-ikev2-vs-openvpn-vs-wireguard/
+Guter Blogpost zu Iptables: https://www.karlrupp.net/de/computer/nat_tutorial
 
 # Blogpost 
 Diskussion, Tweaks, Hinweise etc.: https://www.netways.de/blog/2021/03/18/lust-auf-mehr-privacy-diy-wireguard-mit-dnscrypt-quad9
@@ -430,5 +431,3 @@ https://freedombox.org/ # All-in-One-Alternative mit OpenVPN, Matrix, Search uvm
 https://gitlab.com/cyber5k/mistborn # All-in-One-Alternative, Interessantes Komplettpacket
 
 https://github.com/IAmStoxe/wirehole #Docker Komplettlösung unter Ubuntu
-
-
