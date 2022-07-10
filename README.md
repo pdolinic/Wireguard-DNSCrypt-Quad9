@@ -1,8 +1,8 @@
 # Wireguard Dnscrypt Quad9 Install Guide
 Installation &amp; Konfiguration von Wireguard mit Dnscrypt &amp; Quad 9
 
-Vorteile: https://www.ivpn.net/pptp-vs-ipsec-ikev2-vs-openvpn-vs-wireguard/
-Guter Blogpost zu Iptables: https://www.karlrupp.net/de/computer/nat_tutorial
+* Vorteile: https://www.ivpn.net/pptp-vs-ipsec-ikev2-vs-openvpn-vs-wireguard/
+* Guter Blogpost zu Iptables: https://www.karlrupp.net/de/computer/nat_tutorial
 
 # Blogpost 
 Diskussion, Tweaks, Hinweise etc.: https://www.netways.de/blog/2021/03/18/lust-auf-mehr-privacy-diy-wireguard-mit-dnscrypt-quad9
